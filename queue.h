@@ -7,8 +7,9 @@
 #define __QUEUE_INCLUDED__
 
 #include <stdio.h>
+#include <assert.h>
 
-typedef struct queue QUEUE;
+typedef struct QUEUE QUEUE;
 
 extern QUEUE *newQUEUE(void (*d)(void *, FILE *), void (*f)(void *));
 extern void enqueue(QUEUE *items, void *value);

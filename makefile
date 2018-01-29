@@ -1,4 +1,4 @@
-OBJS = integer.o sll.o test-queue.o
+OBJS = integer.o queue.o sll.o test-queue.o
 OOPTS = -Wall -Wextra -g -c
 LOPTS = -Wall -Wextra -g
 
