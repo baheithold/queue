@@ -20,6 +20,9 @@ int main (void) {
     printf("Displaying queue: ");
     displayQUEUE(queue, stdout);
     printf("\n");
+    printf("Displaying queue (debug): ");
+    displayQUEUEdebug(queue, stdout);
+    printf("\n");
 
     freeQUEUE(queue);
     return 0;

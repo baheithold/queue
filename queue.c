@@ -42,6 +42,10 @@ void displayQUEUE(QUEUE *items, FILE *fp) {
     fprintf(fp, ">");
 }
 
+void displayQUEUEdebug(QUEUE *items, FILE *fp) {
+    displaySLLdebug(items->store, fp);
+}
+
 void freeQUEUE(QUEUE *items) {
     freeSLL(items->store);
     free(items);
