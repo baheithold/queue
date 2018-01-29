@@ -23,3 +23,13 @@ QUEUE *newQUEUE(void (*d)(void *, FILE *), void (*f)(void *)) {
     newQ->free = f;
     return newQ;
 }
+
+void enqueue(QUEUE *items, void *value) {
+    insertSLL(items->store, sizeSLL(items->store), value);
+    items->size++;
+}
+
+void freeQUEUE(QUEUE *items) {
+    freeSLL(items->store);
+    free(items);
+}

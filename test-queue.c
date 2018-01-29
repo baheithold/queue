@@ -10,5 +10,6 @@ int main (void) {
 
     QUEUE *queue = newQUEUE(displayINTEGER, freeINTEGER);
 
+    freeQUEUE(queue);
     return 0;
 }
