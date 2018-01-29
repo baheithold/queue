@@ -31,6 +31,10 @@ void enqueue(QUEUE *items, void *value) {
     items->size++;
 }
 
+void *dequeue(QUEUE *items) {
+    return removeSLL(items->store, FRONT);
+}
+
 void *peekQUEUE(QUEUE *items) {
     return getSLL(items->store, FRONT);
 }

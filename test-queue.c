@@ -27,6 +27,11 @@ int main (void) {
     // Peek value
     printf("\nPeeking: %d\n", getINTEGER(peekQUEUE(queue)));
 
+    // Remove the first value
+    void *x = dequeue(queue);
+    printf("Remove the first value: %d\n", getINTEGER(x));
+    freeINTEGER(x);
+
     freeQUEUE(queue);
     return 0;
 }
