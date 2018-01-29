@@ -31,6 +31,7 @@ int main (void) {
     void *x = dequeue(queue);
     printf("Remove the first value: %d\n", getINTEGER(x));
     freeINTEGER(x);
+    printf("\nPeeking again: %d\n", getINTEGER(peekQUEUE(queue)));
 
     freeQUEUE(queue);
     return 0;
