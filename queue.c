@@ -6,6 +6,8 @@
 #include "queue.h"
 #include "sll.h"
 
+#define FRONT 0
+
 struct QUEUE {
     SLL *store;
     int size;
@@ -27,6 +29,17 @@ QUEUE *newQUEUE(void (*d)(void *, FILE *), void (*f)(void *)) {
 void enqueue(QUEUE *items, void *value) {
     insertSLL(items->store, sizeSLL(items->store), value);
     items->size++;
+}
+
+void displayQUEUE(QUEUE *items, FILE *fp) {
+    fprintf(fp, "<");
+    for (int i = 0; i < sizeSLL(items->store); i++) {
+        items->display(getSLL(items->store, i), fp);
+        if (i < sizeSLL(items->store) - 1) {
+            fprintf(fp, ",");
+        }
+    }
+    fprintf(fp, ">");
 }
 
 void freeQUEUE(QUEUE *items) {
