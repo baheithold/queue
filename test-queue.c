@@ -24,6 +24,9 @@ int main (void) {
     displayQUEUEdebug(queue, stdout);
     printf("\n");
 
+    // Peek value
+    printf("\nPeeking: %d\n", getINTEGER(peekQUEUE(queue)));
+
     freeQUEUE(queue);
     return 0;
 }

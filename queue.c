@@ -31,6 +31,10 @@ void enqueue(QUEUE *items, void *value) {
     items->size++;
 }
 
+void *peekQUEUE(QUEUE *items) {
+    return getSLL(items->store, FRONT);
+}
+
 void displayQUEUE(QUEUE *items, FILE *fp) {
     fprintf(fp, "<");
     for (int i = 0; i < sizeSLL(items->store); i++) {
