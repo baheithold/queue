@@ -42,6 +42,10 @@ void displayQUEUE(QUEUE *items, FILE *fp) {
     fprintf(fp, ">");
 }
 
+int sizeQUEUE(QUEUE *items) {
+    return items->size;
+}
+
 void displayQUEUEdebug(QUEUE *items, FILE *fp) {
     displaySLLdebug(items->store, fp);
 }
