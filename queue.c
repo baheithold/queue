@@ -27,19 +27,24 @@ QUEUE *newQUEUE(void (*d)(void *, FILE *), void (*f)(void *)) {
 }
 
 void enqueue(QUEUE *items, void *value) {
+    assert(items != 0);
     insertSLL(items->store, sizeSLL(items->store), value);
     items->size++;
 }
 
 void *dequeue(QUEUE *items) {
+    assert(items->size > 0);
+    items->size--;
     return removeSLL(items->store, FRONT);
 }
 
 void *peekQUEUE(QUEUE *items) {
+    assert(items->size > 0);
     return getSLL(items->store, FRONT);
 }
 
 void displayQUEUE(QUEUE *items, FILE *fp) {
+    assert(items != 0);
     fprintf(fp, "<");
     for (int i = 0; i < sizeSLL(items->store); i++) {
         items->display(getSLL(items->store, i), fp);
@@ -51,10 +56,12 @@ void displayQUEUE(QUEUE *items, FILE *fp) {
 }
 
 int sizeQUEUE(QUEUE *items) {
+    assert(items != 0);
     return items->size;
 }
 
 void displayQUEUEdebug(QUEUE *items, FILE *fp) {
+    assert(items != 0);
     displaySLLdebug(items->store, fp);
 }
 
