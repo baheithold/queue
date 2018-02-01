@@ -1,38 +1,187 @@
-/*
- *  File:   test-queue.c
- *  Author: Brett Heithold
- */
-
-#include "integer.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "queue.h"
+#include "integer.h"
 
-int main (void) {
+int main(void)
+{  
+  QUEUE *list = newQUEUE(displayINTEGER, freeINTEGER);
 
-    QUEUE *queue = newQUEUE(displayINTEGER, freeINTEGER);
+  int x; //used in peeking
+  INTEGER *i; //used in dequeueing
+  int size; //used in sizing
 
-    // Add some items to queue
-    enqueue(queue, newINTEGER(5));
-    enqueue(queue, newINTEGER(6));
-    enqueue(queue, newINTEGER(2));
-    enqueue(queue, newINTEGER(9));
-    enqueue(queue, newINTEGER(1));
+  // enqueue into QUEUE ->
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+  enqueue(list, newINTEGER(0));
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+  enqueue(list, newINTEGER(1));
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+  enqueue(list, newINTEGER(2));
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+  enqueue(list, newINTEGER(3));
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+  enqueue(list, newINTEGER(4));
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+  enqueue(list, newINTEGER(5));
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
 
-    printf("Displaying queue: ");
-    displayQUEUE(queue, stdout);
-    printf("\n");
-    printf("Displaying queue (debug): ");
-    displayQUEUEdebug(queue, stdout);
-    printf("\n");
+  size = sizeQUEUE(list);
+  printf("the size of list is: %d\n", size);
 
-    // Peek value
-    printf("\nPeeking: %d\n", getINTEGER(peekQUEUE(queue)));
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
 
-    // Remove the first value
-    void *x = dequeue(queue);
-    printf("Remove the first value: %d\n", getINTEGER(x));
-    freeINTEGER(x);
-    printf("\nPeeking again: %d\n", getINTEGER(peekQUEUE(queue)));
+  printf("\n");
+  printf("The value ");
+  i = dequeue(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
 
-    freeQUEUE(queue);
-    return 0;
+  size = sizeQUEUE(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+
+  
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekQUEUE(list));
+  printf("peek QUEUE (first value): %d\n", x);
+  printf("\n");
+
+  printf("The value ");
+  i = dequeue(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeQUEUE(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekQUEUE(list));
+  printf("peek QUEUE (first value): %d\n", x);
+
+  printf("The value ");
+  i = dequeue(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeQUEUE(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekQUEUE(list));
+  printf("peek QUEUE (first value): %d\n", x);
+
+  printf("The value ");
+  i = dequeue(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeQUEUE(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekQUEUE(list));
+  printf("peek QUEUE (first value): %d\n", x);
+
+  printf("The value ");
+  i = dequeue(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeQUEUE(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  x = getINTEGER((INTEGER *) peekQUEUE(list));
+  printf("peek QUEUE (first value): %d\n", x);
+
+  printf("The value ");
+  i = dequeue(list);                   //remove from front
+  displayINTEGER(i,stdout);
+  printf(" was removed.\n");
+  freeINTEGER(i);
+  printf("\n");
+
+  size = sizeQUEUE(list);
+  printf("the size of list1 is: %d\n", size);
+
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+
+  enqueue(list, newINTEGER(5));
+  enqueue(list, newINTEGER(4));
+  enqueue(list, newINTEGER(3));
+  
+  printf("\n");
+  size = sizeQUEUE(list);
+  printf("the size of list is: %d\n", size);
+
+  displayQUEUE(list, stdout);
+  printf("\n");
+  displayQUEUEdebug(list, stdout);
+  printf("\n");
+
+  printf("\n");
+  freeQUEUE(list);
+  return 0;
 }
