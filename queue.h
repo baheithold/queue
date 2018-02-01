@@ -7,7 +7,6 @@
 #define __QUEUE_INCLUDED__
 
 #include <stdio.h>
-#include <assert.h>
 
 typedef struct QUEUE QUEUE;
 

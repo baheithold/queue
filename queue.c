@@ -5,6 +5,7 @@
 
 #include "queue.h"
 #include "sll.h"
+#include <assert.h>
 
 #define FRONT 0
 
