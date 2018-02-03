@@ -1,0 +1,9 @@
+<a,c,b>
+a
+<c,b>
+head->{c,b},tail->{b}
+c
+<b>
+head->{b},tail->{b}
+<>
+head->{},tail->{}
