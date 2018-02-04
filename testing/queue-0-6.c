@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "queue.h"
+#include "../queue.h"
 
 extern void srandom(unsigned int);
 extern long int random(void);
